@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Carrinho</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @carts.each do |cart| %>
+      <tr>
+      <td><%= link_to 'Mostrar items do carrinho', cart %></td>
+      </tr>
+      <tr>
+      </br>
+      </tr>
+      <tr>
+      <td><%= link_to 'Cancelar items selecionados', cart, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Produto:</strong>
+  <%= @line_item.product.name %>
+<td><%= image_tag @line_item.product.image.url(:thumb) %></td>
+</p>
+
+<%= link_to 'Continuar comprando', line_items_path %>

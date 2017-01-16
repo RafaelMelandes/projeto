@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Voltar', carts_path %>
+<% total = 0 %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Preço</th>
+      <th>Imagem</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cart.line_items.each  do |item| %>
+      <tr>
+        <td><%= item.product.name %></td>
+        <td><%= number_to_currency item.product.price %></td>
+        <td><%= image_tag item.product.image.url(:thumb) %></td>
+      </tr>
+	<%total += item.product.price %>
+    <% end %>
+    <td>Total:</td>
+    <td><%= number_to_currency total %></td>
+  </tbody>
+</table>
